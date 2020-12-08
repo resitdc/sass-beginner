@@ -1,0 +1,71 @@
+$primary-color: #222222
+$secondary-color: #737373
+$red-color: #ff4242
+
+@mixin displayType($disValue)
+  display: $disValue
+
+@mixin fontWeightType($valueFont)
+  font-weight: $valueFont
+
+@mixin paddingY($valueTop, $valueBottom)
+  padding-top: $valueTop
+  padding-bottom: $valueBottom
+
+*
+  box-sizing: border-box
+
+.container
+  width: 950px
+  margin-left: auto
+  margin-right: auto
+
+.row
+  flex-wrap: wrap
+  @include displayType(flex)
+
+.col
+  width: 50%
+  position: relative
+  padding-left: 15px
+  padding-right: 15px
+  margin-bottom: 30px
+
+.box-barang
+  $lebar-thumbnail: 200px
+  $sisanya: calc(100% - #{$lebar-thumbnail})
+  $radius: 7px
+
+  width: 100%
+  box-shadow: 3px 3px 6px rgba(0,0,0, .5)
+  border-radius: $radius
+  flex-wrap: wrap
+  @include displayType(flex)
+  & .barang-thumbnail
+    width: $lebar-thumbnail
+    position: relative
+    & .barang-gambar
+      width: $lebar-thumbnail
+      height: $lebar-thumbnail
+      border-top-left-radius: $radius
+      border-bottom-left-radius: $radius
+  & .barang-info
+    font-family: Arial
+    width: $sisanya
+    position: relative
+    padding-left: 10px
+    padding-right: 20px
+    @include paddingY(20px, 10px)
+    & .barang-nama
+      color: $primary-color
+      font-size: 20px
+      @include fontWeightType(bold)
+    & .barang-harga
+      color: $red-color
+      @include paddingY(10px, 10px)
+      @include fontWeightType(bold)
+      &::before
+        content: "Rp. "
+    & .barang-deskripsi
+      color: $secondary-color
+      font-size: 14px

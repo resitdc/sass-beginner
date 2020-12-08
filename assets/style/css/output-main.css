@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.col {
+  width: 50%;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+}
+
+.box-barang {
+  width: 100%;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  flex-wrap: wrap;
+  display: flex;
+}
+.box-barang .barang-thumbnail {
+  width: 200px;
+  position: relative;
+}
+.box-barang .barang-thumbnail .barang-gambar {
+  width: 200px;
+  height: 200px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.box-barang .barang-info {
+  font-family: Arial;
+  width: calc(100% - 200px);
+  position: relative;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.box-barang .barang-info .barang-nama {
+  color: #222222;
+  font-size: 20px;
+  font-weight: bold;
+}
+.box-barang .barang-info .barang-harga {
+  color: #ff4242;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.box-barang .barang-info .barang-harga::before {
+  content: "Rp. ";
+}
+.box-barang .barang-info .barang-deskripsi {
+  color: #737373;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=output-main.css.map */
